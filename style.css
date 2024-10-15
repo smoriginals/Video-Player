@@ -1,6 +1,7 @@
 ﻿*{
     margin:0;
     padding:0;
+    font-size:25px;
     box-sizing:border-box;
 }
 body {
@@ -21,95 +22,77 @@ body {
 .video-frame {
     height: 60%;
     width: 46.4%;
-    background-color:#ccc;
+    background-color:black;
     display: flex;
     justify-content: flex-end;
     align-items: end;
+}
+.video-file {
+    height: 100%;
+    width: 100%;
 }
 .video-controls {
     height: 8%;
     width: 46.5%;
     position: fixed;
     right:455px;
-    transform: translateY(65px);
+    transform: scaleY(-1);
     background-color: black;
     opacity:0%;
     transition: all 0.2s ease-in-out;
-    z-index:-1;
 }  
 .video-frame:hover .video-controls
 {
-    transform: translateY(-1px);
-    z-index: 1;
-    opacity:50%;
-}
-.video-file{
-    height:100%;
-    width:100%;
+    transform: scaleY(1);
+    opacity:80%;
 }
 
-#vid-basis {
-    height: 40px;
-    background-color: lightblue;
-    position: absolute;
-    top: 50%;
-    left: 50%; /* Start from the center */
-    transform: translateX(-50%); /* Ensure it starts at the center horizontally */
-    transform-origin: left; /* Growth will happen towards the right from the center */
-    width: 0%; /* Initial width is 0 */
-    cursor: pointer;
-    
+#playback-slider {
+    height: 10%;
+    width: 100%;
+    flex: 1;
 }
-.volume-button {
-    height: 25px;
-    width: 25px;
-    background-color: orange;
-    border-radius: 100px;
+.volume-button::before {
+    height: 100px;
+    width: 100px;
+    content:'🔊'; 
 }
-.volume-button-update {
-    height: 25px;
-    width: 25px;
-    background-color: red;
-    border-radius: 100px;
+.volume-button.muted::before{
+    content:'🔇';
 }
-.volume-slider{
-    height: 30%;
+#sound-slider {
+    height: 10%;
     width: 30%;
-    background-color: orange;
 }
-.seek15-button {
-    height: 25px;
-    width: 25px;
-    background-color: white;
-    border-radius: 100px;
-}.seek15-button-update {
-    height: 25px;
-    width: 25px;
-    background-color: blue;
-    border-radius: 100px;
+
+.play-button::before{
+    height:100px;
+    width:100px;
+    content:'⏯';
 }
-.play-button {
-    height: 25px;
-    width: 25px;
-    background-color: cyan;
-    border-radius: 100px;
+.play-button.pause::before {
+    content: '⏸';
 }
-.play-button-update {
-    height: 25px;
-    width: 25px;
-    background-color: blue;
-    border-radius: 100px;
+
+.seek-backward::before {
+    height: 100px;
+    width: 100px;
+    content:'⏪';
 }
-.seek10-button {
-    height: 25px;
-    width: 25px;
-    background-color: white;
-    border-radius: 100px;
-}.seek10-button-update {
-    height: 25px;
-    width: 25px;
-    background-color: blue;
-    border-radius: 100px;
+.seek-forward::before {
+    height: 100px;
+    width: 100px;
+    content: '⏩';
+}
+.speed-up::before{
+    height:100px;
+    width:100px;
+    content:'⏭';
+}
+.speed-down::before {
+    height: 100px;
+    width: 100px;
+    content: '⏮';
 }
 .full-button {
     height: 25px;
