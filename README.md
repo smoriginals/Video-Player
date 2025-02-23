@@ -1,1 +1,1 @@
-[OPEN IN BROWSER](https://smos-github.github.io/Video-Player/)
+[OPEN IN BROWSER](https://smoriginals.github.io/Video-Player/)
